@@ -12,7 +12,7 @@ function calcular_descuento($total_compra) {
 }
 
 function aplicar_impuesto($subtotal) {
-    return $subtotal * 0.07;  // 7% de impuesto
+    return $subtotal * 0.07;  
 }
 
 function calcular_total($subtotal, $descuento, $impuesto) {
