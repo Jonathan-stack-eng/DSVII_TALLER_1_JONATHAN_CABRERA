@@ -115,15 +115,6 @@ echo "Libro más reciente: {$libroMasReciente['titulo']} ({$libroMasReciente['a�
 
 // 10. TAREA: Implementa una función de búsqueda que permita buscar libros por título o autor
 // La función debe ser capaz de manejar búsquedas parciales y no debe ser sensible a mayúsculas/minúsculas
-function buscarLibros($biblioteca, $termino) {
-    return array_filter($biblioteca, function($libro) use ($termino) {
-        $termino = strtolower($termino);
-        return strpos(strtolower($libro['titulo']), $termino) !== false ||
-               strpos(strtolower($libro['autor']), $termino) !== false;
-    });
-}
-
-
 // Ejemplo de uso de la función de búsqueda (descomenta para probar)
 // $resultadosBusqueda = buscarLibros($biblioteca, "quijote");
 // echo "Resultados de búsqueda para 'quijote':\n";
@@ -133,6 +124,17 @@ function buscarLibros($biblioteca, $termino) {
 // El reporte debe incluir: número total de libros, número de libros prestados,
 // número de libros por género, y el autor con más libros en la biblioteca
 // 11. Función para generar un reporte de la biblioteca
+
+function buscarLibros($biblioteca, $termino) {
+    return array_filter($biblioteca, function($libro) use ($termino) {
+        $termino = strtolower($termino);
+        return strpos(strtolower($libro['titulo']), $termino) !== false ||
+               strpos(strtolower($libro['autor']), $termino) !== false;
+    });
+}
+
+
+
 function generarReporteBiblioteca($biblioteca) {
     $reporte = [
         "total_libros" => count($biblioteca),
@@ -157,7 +159,7 @@ print_r(generarReporteBiblioteca($biblioteca));
 // Ejemplo de uso de la función de reporte (descomenta para probar)
 // echo "Reporte de la Biblioteca:\n";
 // print_r(generarReporteBiblioteca($biblioteca));
-// 10. Función para buscar libros por título o autor
+
 
 // Ejemplo del uso de la función de búsqueda
 $resultadosBusqueda = buscarLibros($biblioteca, "quijote");

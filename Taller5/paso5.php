@@ -54,7 +54,7 @@ function filtrarPorCategoria($productos, $categoria) {
 
 $productosDe
 
-Computadoras = filtrarPorCategoria($tiendaData['productos'], "computadoras");
+  Computadoras = filtrarPorCategoria($tiendaData['productos'], "computadoras");
 echo "\nProductos en la categoría 'computadoras':\n";
 imprimirProductos($productosDeComputadoras);
 
