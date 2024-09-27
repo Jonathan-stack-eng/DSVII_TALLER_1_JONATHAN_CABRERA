@@ -197,6 +197,7 @@ switch ($action) {
                         <td><?php echo $recurso->anioPublicacion; ?></td>
                         <td><?php echo $recurso->estado; ?></td>
                         <td><?php echo $recurso->fechaAdquisicion; ?></td>
+                        <td><?php echo $recurso->obtenerDetallesPretamo(); ?></td>
                         <td><?php echo $recurso->tipo; ?></td>
                         <td>
                             <a href='index.php?action=edit&id=<?php echo $recurso->id; ?>' class='btn btn-sm btn-warning'><i class='fas fa-edit'></i></a>

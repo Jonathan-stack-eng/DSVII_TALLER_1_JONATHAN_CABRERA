@@ -129,10 +129,10 @@ class GestorBiblioteca {
         }
     }
 
-    public function buscarRecursosPorEstado($estado){
-        return array_filter($this->recursos,function(recursos)use($estado)){
+    public function buscarRecursosPorEstado($estado) {
+        return array_filter($this->recursos, function ($recurso) use ($estado) {
             return $recurso->estado === $estado;
-        };
+        });
     }
 
     public function listarRecursos($filtroEstado = '', $campoOrden = 'id', $direccionOrden = 'ASC') {
@@ -146,6 +146,7 @@ class GestorBiblioteca {
         return $recursos;
     }
 
+    //cambiar en guardarRecursos al nombre del archivo por si falla 
     public function guardarRecursos($archivoJSON) {
         $datos = array_map(function ($recurso) {
             return [
